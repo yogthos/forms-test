@@ -1,5 +1,6 @@
 (ns forms-test.core
-    (:require [reagent.core :as reagent :refer [atom]]))
+    (:require [reagent.core :as reagent :refer [atom]]
+              [reagent-forms.core :refer [bind-fields]]))
 
 (def num-form
   [:input {:field :numeric
@@ -20,5 +21,4 @@
   (reagent/render [home-page] (.getElementById js/document "app")))
 
 (defn init! []
-  (hook-browser-navigation!)
   (mount-root))
